@@ -12,6 +12,14 @@ const { Msg } = require('./src/models/msgSchems');
 const { groupChat } = require('./src/models/Group_chat_schema')
 
 const app = express();
+const corsOptions = {
+    origin: '*',  
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+ 
+  };
+  
+  app.use(cors(corsOptions));
 app.use(cors());
 app.use(bodyParser.json());
 
